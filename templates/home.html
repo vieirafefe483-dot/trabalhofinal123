@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Automatic Fit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+    <!-- Cabeçalho da Home -->
+    <header class="cabecalho">
+        <div class="marca">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Automatic Fit">
+            <strong>Automatic <span>Fit</span></strong>
+        </div>
+
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit" class="botao-sair">Sair</button>
+        </form>
+    </header>
+
+    <!-- A mesma Home serve para os três perfis -->
+    <main class="conteudo">
+        <section class="cartao-home">
+            <img class="logo-home"
+                 src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="Logo Automatic Fit">
+
+            {% if perfil == 'ALUNO' %}
+                <p class="perfil">Área do Aluno</p>
+            {% elif perfil == 'PERSONAL' %}
+                <p class="perfil">Área do Professor</p>
+            {% elif perfil == 'ADMINISTRADOR' %}
+                <p class="perfil">Área do Administrador</p>
+            {% endif %}
+
+            <h1>Olá, {{ nome }}!</h1>
+            <p>Bem-vindo ao Automatic Fit.</p>
+            <p class="email">{{ email }}</p>
+
+            <!-- Mensagens do Flask -->
+            {% with mensagens = get_flashed_messages(with_categories=True) %}
+                {% for categoria, mensagem in mensagens %}
+                    <p class="mensagem {{ categoria }}">{{ mensagem }}</p>
+                {% endfor %}
+            {% endwith %}
+
+            <!-- Opções da conta -->
+            <div class="acoes">
+                <a class="botao" href="{{ url_for('editar_dados') }}">
+                    Editar meus dados
+                </a>
+
+                <a class="botao botao-rosa" href="{{ url_for('alterar_senha') }}">
+                    Alterar minha senha
+                </a>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

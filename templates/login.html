@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Automatic Fit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+
+    <main class="pagina-login">
+
+        <!-- Apresentação do Automatic Fit -->
+        <section class="apresentacao">
+
+            <img src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="Logo Automatic Fit">
+
+            <h1>Automatic <span>Fit</span></h1>
+
+            <p>
+                Gerencie aulas, horários e inscrições
+                com praticidade.
+            </p>
+
+        </section>
+
+
+        <!-- Área do login -->
+        <section class="area-login">
+
+            <div class="caixa-login">
+
+                <img class="logo-login"
+                     src="{{ url_for('static', filename='img/logo.png') }}"
+                     alt="Logo Automatic Fit">
+
+                <h2>Bem-vindo</h2>
+                <h3>Automatic Fit</h3>
+
+                <p class="subtitulo">
+                    Faça seu login para acessar sua conta.
+                </p>
+
+
+                <!-- Mensagens de erro e sucesso -->
+                {% with mensagens = get_flashed_messages(with_categories=True) %}
+                    {% for categoria, mensagem in mensagens %}
+                        <p class="mensagem {{ categoria }}">{{ mensagem }}</p>
+                    {% endfor %}
+                {% endwith %}
+
+
+                <!-- Formulário de login -->
+                <form action="{{ url_for('login') }}" method="POST">
+
+                    <!-- E-mail -->
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+
+                        <span class="icone-email">✉</span>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="E-mail"
+                               autocomplete="email"
+                               required>
+                    </div>
+
+
+                    <!-- Senha -->
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+
+                        <img class="icone-cadeado"
+                             src="{{ url_for('static', filename='img/cadeado.png') }}"
+                             alt="">
+
+                        <input type="password"
+                               id="senha"
+                               name="senha"
+                               placeholder="Senha"
+                               autocomplete="current-password"
+                               required>
+                    </div>
+
+
+                    <!-- Link para cadastro -->
+                    <p class="link-cadastro">
+                        Não tem uma conta?
+                        <a href="{{ url_for('cadastro') }}">Cadastre-se</a>
+                    </p>
+
+
+                    <!-- Botão de login -->
+                    <button type="submit" class="botao-entrar">
+                        Entrar →
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+

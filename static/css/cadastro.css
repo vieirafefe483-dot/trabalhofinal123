@@ -1,0 +1,306 @@
+
+/* Fonte do Automatic Fit */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #191250;
+}
+
+
+/* Fundo da página */
+.pagina-cadastro {
+    display: flex;
+    min-height: 100vh;
+
+    background-image: url('../img/fundo-login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Divide a página */
+.apresentacao,
+.area-cadastro {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Apresentação à esquerda */
+.apresentacao {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+}
+
+.apresentacao img {
+    width: 165px;
+    height: 165px;
+    object-fit: contain;
+}
+
+.apresentacao h1 {
+    margin: 18px 0 10px;
+    font-size: 39px;
+    font-weight: 800;
+}
+
+.apresentacao h1 span {
+    color: #f529b5;
+}
+
+.apresentacao p {
+    max-width: 350px;
+    font-size: 15px;
+    color: #625b75;
+    line-height: 1.7;
+}
+
+
+/* Área do formulário */
+.area-cadastro {
+    padding: 25px;
+}
+
+
+/* Caixa branca */
+.caixa-cadastro {
+    width: 100%;
+    max-width: 410px;
+    padding: 30px 34px;
+
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(60, 40, 100, 0.12);
+}
+
+
+/* Logo do formulário */
+.logo-cadastro {
+    display: block;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+}
+
+
+/* Títulos */
+.caixa-cadastro h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    margin: 6px 0 22px;
+    text-align: center;
+    color: #85808d;
+    font-size: 12px;
+}
+
+
+/* Campos do formulário */
+.campo {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.campo label {
+    position: absolute;
+    left: -9999px;
+}
+
+.campo input {
+    width: 100%;
+    height: 43px;
+    padding: 0 40px;
+
+    border: none;
+    border-radius: 9px;
+
+    background-color: #e8eaf1;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline-color: #8b39f7;
+}
+
+
+/* Ícones */
+.icone,
+.icone-cadeado {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 17px;
+    height: 17px;
+
+    pointer-events: none;
+}
+
+.icone {
+    color: #697386;
+    font-size: 17px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.icone-cadeado {
+    object-fit: contain;
+}
+
+
+/* Data de nascimento */
+.campo-data label {
+    position: static;
+    display: block;
+
+    margin: 0 0 5px 4px;
+
+    color: #77717e;
+    font-size: 11px;
+}
+
+.campo-data input {
+    padding: 0 12px;
+    color: #697386;
+}
+
+
+/* Botão de cadastro */
+.botao-cadastrar {
+    width: 100%;
+    height: 46px;
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: linear-gradient(90deg, #6415ff, #fa2ab5);
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.botao-cadastrar:hover {
+    opacity: 0.9;
+}
+
+
+/* Link para login */
+.link-login {
+    margin-top: 20px;
+    text-align: center;
+
+    color: #77717e;
+    font-size: 12px;
+}
+
+.link-login a {
+    color: #7433dc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/* Mensagens de erro */
+.mensagem {
+    padding: 10px;
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    background-color: #ffe6ef;
+    color: #a52b5d;
+
+    font-size: 12px;
+    text-align: center;
+}
+
+
+/* Mensagens de sucesso */
+.mensagem.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .apresentacao img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .apresentacao h1 {
+        font-size: 30px;
+    }
+
+    .area-cadastro {
+        padding: 20px;
+    }
+
+    .caixa-cadastro {
+        padding: 28px 25px;
+    }
+}
+
+
+/* Celular */
+@media (max-width: 700px) {
+
+    .pagina-cadastro {
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .apresentacao {
+        display: none;
+    }
+
+    .area-cadastro {
+        width: 100%;
+        padding: 0;
+    }
+
+    .caixa-cadastro {
+        max-width: 390px;
+        padding: 28px 22px;
+    }
+}
+
+
+/* Celular pequeno */
+@media (max-width: 360px) {
+
+    .pagina-cadastro {
+        padding: 12px;
+    }
+
+    .caixa-cadastro {
+        padding: 25px 18px;
+    }
+}

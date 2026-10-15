@@ -1,0 +1,490 @@
+
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #17105c;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: white;
+    border-bottom: 1px solid #eeeeee;
+    padding: 14px 0;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #17105c;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.marca img {
+    width: 45px;
+}
+
+.marca strong {
+    color: #f329b4;
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Botões */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 22px;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Botões do menu com tamanho igual */
+.menu-links .botao {
+    width: 150px;
+    height: 44px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.botao-cadastro,
+.botao-login {
+    background: linear-gradient(90deg, #7134ff, #ef2abd);
+}
+
+/* Botões principais */
+.botao-principal {
+    min-width: 220px;
+    background: linear-gradient(90deg, #ff2ab4, #ee2aae);
+    border-radius: 13px;
+}
+
+
+/* Apresentação inicial */
+.hero {
+    background-image: url("../img/fundo-hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-texto {
+    width: 45%;
+    max-width: 520px;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #f329b4;
+}
+
+.hero p {
+    color: #6d6482;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* Recursos */
+.recursos {
+    background-color: #f1f2f7;
+    padding: 75px 0;
+    text-align: center;
+}
+
+.recursos h2 {
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.descricao-recursos {
+    color: #686476;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+}
+
+.lista-recursos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 45px;
+}
+
+.recurso {
+    width: 30%;
+}
+
+.recurso img {
+    width: 185px;
+    height: 185px;
+    object-fit: contain;
+}
+
+.recurso h3 {
+    margin: 15px 0 10px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.recurso p {
+    color: #686476;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* Convite para acessar o sistema */
+.convite {
+    background-color: #ffdff2;
+    padding: 65px 0;
+}
+
+.convite-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.convite-texto {
+    width: 48%;
+}
+
+.convite h2 {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.convite p {
+    color: #776b83;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.convite img {
+    width: 48%;
+    max-width: 500px;
+}
+
+
+/* Rodapé */
+.rodape {
+    padding-top: 35px;
+    background-color: white;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+
+.rodape-marca {
+    width: 45%;
+}
+
+.rodape-marca p {
+    margin-top: 10px;
+    color: #77717e;
+    font-size: 13px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 20%;
+}
+
+.rodape-links h3 {
+    font-size: 15px;
+}
+
+.rodape-links a {
+    color: #77717e;
+    font-size: 13px;
+}
+
+.rodape-final {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #eeeeee;
+    padding: 18px 0;
+    color: #77717e;
+    font-size: 12px;
+}
+
+
+/* Responsividade para tablet */
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero-texto {
+        width: 60%;
+        max-width: 450px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    /* Recursos um embaixo do outro */
+    .lista-recursos {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .recurso {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    /* Convite */
+    .convite-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .convite-texto {
+        width: 100%;
+    }
+
+    .convite h2 {
+        font-size: 30px;
+    }
+
+    .convite img {
+        width: 90%;
+        max-width: 450px;
+    }
+
+    /* Rodapé */
+    .rodape-conteudo {
+        gap: 20px;
+    }
+}
+
+
+/* Responsividade para celular */
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    /* Menu */
+    .menu {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .marca {
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    .marca img {
+        width: 38px;
+    }
+
+    .menu-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    /* Botões continuam com tamanhos iguais */
+    .menu-links .botao {
+        width: 48%;
+        height: 42px;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    /* Apresentação */
+    .hero {
+        min-height: 500px;
+        background-position: 60% center;
+        align-items: flex-start;
+    }
+
+    .hero-texto {
+        width: 85%;
+        padding: 55px 0 30px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+        line-height: 1.15;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .botao-principal {
+        min-width: 0;
+        padding: 13px 20px;
+        font-size: 12px;
+    }
+
+    /* Recursos */
+    .recursos {
+        padding: 50px 0;
+    }
+
+    .recursos h2 {
+        font-size: 23px;
+    }
+
+    .descricao-recursos {
+        font-size: 12px;
+    }
+
+    .lista-recursos {
+        gap: 40px;
+        margin-top: 35px;
+    }
+
+    .recurso {
+        width: 100%;
+    }
+
+    .recurso h3 {
+        font-size: 17px;
+    }
+
+    .recurso p {
+        font-size: 12px;
+    }
+
+    /* Convite */
+    .convite {
+        padding: 50px 0;
+    }
+
+    .convite h2 {
+        font-size: 28px;
+    }
+
+    .convite p {
+        font-size: 12px;
+    }
+
+    .convite img {
+        width: 100%;
+    }
+
+    /* Rodapé */
+    .rodape-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .rodape-marca {
+        width: 100%;
+    }
+
+    .rodape-links {
+        width: 100%;
+        align-items: center;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* Celulares pequenos */
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .menu-links .botao {
+        font-size: 11px;
+    }
+
+    .recursos h2 {
+        font-size: 21px;
+    }
+}
+

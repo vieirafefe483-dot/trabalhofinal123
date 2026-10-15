@@ -1,0 +1,174 @@
+
+/* Fonte do Automatic Fit */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #22154f;
+    min-height: 100vh;
+    background-image: url('../img/fundo-login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 12px 6%;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marca img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.marca strong {
+    font-size: 20px;
+}
+
+.marca span {
+    color: #e832b8;
+}
+
+.botao-sair {
+    border: 1px solid #7134ff;
+    background-color: white;
+    color: #7134ff;
+    padding: 10px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Parte central da Home */
+.conteudo {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.cartao-home {
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    border-radius: 24px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(40, 20, 70, 0.12);
+}
+
+.logo-home {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.perfil {
+    color: #8a40eb;
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.cartao-home h1 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.cartao-home p {
+    font-size: 14px;
+}
+
+.cartao-home .email {
+    margin-top: 8px;
+    color: #77717e;
+    font-size: 12px;
+}
+
+/* Botões */
+.acoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-height: 46px;
+    border-radius: 9px;
+    background-color: #7134ff;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.botao-rosa {
+    background-color: #e832b8;
+}
+
+/* Mensagens */
+.mensagem {
+    margin-top: 18px;
+    padding: 10px;
+    background-color: #ffe6ef;
+    color: #a52b5d;
+    border-radius: 8px;
+}
+
+.mensagem.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 12px 18px;
+    }
+
+    .marca strong {
+        font-size: 16px;
+    }
+
+    .marca img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cartao-home {
+        padding: 28px 18px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .botao {
+        width: 100%;
+    }
+}

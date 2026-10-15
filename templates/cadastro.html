@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro - Automatic Fit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/cadastro.css') }}">
+</head>
+<body>
+
+    <main class="pagina-cadastro">
+
+        <!-- Apresentação do Automatic Fit -->
+        <section class="apresentacao">
+
+            <img src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="Logo Automatic Fit">
+
+            <h1>Automatic <span>Fit</span></h1>
+
+            <p>
+                Gerencie aulas, horários e inscrições
+                com praticidade.
+            </p>
+
+        </section>
+
+
+        <!-- Área do cadastro -->
+        <section class="area-cadastro">
+
+            <div class="caixa-cadastro">
+
+                <img class="logo-cadastro"
+                     src="{{ url_for('static', filename='img/logo.png') }}"
+                     alt="Logo Automatic Fit">
+
+                <h2>Crie sua conta</h2>
+
+                <p class="subtitulo">
+                    Preencha os dados abaixo para começar.
+                </p>
+
+
+                <!-- Mensagens do Flask -->
+                {% with mensagens = get_flashed_messages(with_categories=True) %}
+                    {% for categoria, mensagem in mensagens %}
+                        <p class="mensagem {{ categoria }}">{{ mensagem }}</p>
+                    {% endfor %}
+                {% endwith %}
+
+
+                <!-- Formulário -->
+                <form action="{{ url_for('cadastro') }}" method="POST">
+
+                    <!-- E-mail -->
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <span class="icone">✉</span>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="E-mail"
+                               maxlength="100"
+                               required>
+                    </div>
+
+
+                    <!-- Nome completo -->
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <span class="icone">♙</span>
+
+                        <input type="text"
+                               id="nome"
+                               name="nome"
+                               placeholder="Nome Completo"
+                               maxlength="254"
+                               required>
+                    </div>
+
+
+                    <!-- Telefone -->
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <span class="icone">☎</span>
+
+                        <input type="number"
+                               id="telefone"
+                               name="telefone"
+                               placeholder="Telefone"
+                               maxlength="11">
+                    </div>
+
+
+                    <!-- CPF -->
+                    <div class="campo">
+                        <label for="cpf">CPF</label>
+                        <span class="icone">▣</span>
+
+                        <input type="number"
+                               id="cpf"
+                               name="cpf"
+                               placeholder="CPF"
+                               maxlength="11"
+                               required>
+                    </div>
+
+
+                    <!-- Data de nascimento -->
+                    <div class="campo campo-data">
+
+                        <label for="data_nascimento">
+                            Data de Nascimento
+                        </label>
+
+                        <input type="date"
+                               id="data_nascimento"
+                               name="data_nascimento"
+                               required>
+
+                    </div>
+
+
+                    <!-- Senha -->
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+
+                        <img class="icone-cadeado"
+                             src="{{ url_for('static', filename='img/cadeado.png') }}"
+                             alt="">
+
+                        <input type="password"
+                               id="senha"
+                               name="senha"
+                               placeholder="Senha"
+                               minlength="8"
+                               autocomplete="new-password"
+                               required>
+                    </div>
+
+
+                    <!-- Confirmar senha -->
+                    <div class="campo">
+                        <label for="confirmar_senha">
+                            Confirmar Senha
+                        </label>
+
+                        <img class="icone-cadeado"
+                             src="{{ url_for('static', filename='img/cadeado.png') }}"
+                             alt="">
+
+                        <input type="password"
+                               id="confirmar_senha"
+                               name="confirmar_senha"
+                               placeholder="Confirmar Senha"
+                               minlength="8"
+                               autocomplete="new-password"
+                               required>
+                    </div>
+
+
+                    <!-- Botão de cadastro -->
+                    <button type="submit" class="botao-cadastrar">
+                        Cadastrar-se →
+                    </button>
+
+
+                    <!-- Link para o login -->
+                    <p class="link-login">
+                        Já tem uma conta?
+                        <a href="{{ url_for('login') }}">
+                            Fazer Login
+                        </a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+
